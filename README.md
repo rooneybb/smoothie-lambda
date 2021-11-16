@@ -1,3 +1,3 @@
 # smoothie-lambda
 
-basic backend for getting/setting smoothiefest rsvp responses
+Backend used by smoothiefest website for getting/setting smoothiefest rsvp responses.
