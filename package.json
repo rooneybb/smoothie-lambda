@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "aws-sdk": "^2.853.0",
+    "node-random-name": "^1.0.1",
+    "uuid": "^3.3.2"
+  }
+}
