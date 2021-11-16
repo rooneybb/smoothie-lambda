@@ -1,4 +1,5 @@
-const main = require("../index");
+// remember to ensure using smoothietest db
+const { main } = require("../index");
 const testData = require("../resources/examples/exampleGetEvent");
 
 const debugRun = async () => {

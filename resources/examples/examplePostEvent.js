@@ -63,7 +63,7 @@ module.exports = {
         user: null,
       },
     },
-    body: '{"firstName":"bb","lastName":"yo","partySize":2}',
+    body: '{"firstName":"test","lastName":"person","partySize":2}',
     isBase64Encoded: false,
   },
 };

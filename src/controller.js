@@ -10,6 +10,7 @@ const controller = async (resource, method, data) => {
   };
 
   const methodToCall = backendController[resource][method];
+  console.log(`Backend controller calling ${resource}:${method}`);
   const res = await methodToCall(data);
   return res;
 };

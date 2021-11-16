@@ -1,22 +1,26 @@
 const aws = require("aws-sdk");
 const db = new aws.DynamoDB.DocumentClient({ region: "us-east-1" });
+const tableName = process.env.tableName || "smoothietest";
 
 const setGuests = async (data) => {
-  console.log(`Hello from setGuests: ${JSON.stringify(data)}`);
+  console.log(`Starting call to setGuests`);
   const test = await updateDb(data);
-  return "test setGuests";
+  console.log(`Successfully finished setGuests call`);
+  return test;
 };
 
 const updateDb = async (data) => {
   const params = {
-    TableName: "smoothiefest",
-    Item: { id: 1, ...data },
+    TableName: tableName,
+    Item: { ...data },
   };
   try {
-    const test = await db.put(params).promise();
-    return test;
+    const res = await db.put(params).promise();
+    return res;
   } catch (e) {
-    console.log(`Error updating guests in db: ${e.message}`);
+    console.error(
+      `Error updating guests in db: { msg: ${e.message}, stack: ${e.stack} }`
+    );
     return e;
   }
 };
